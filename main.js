@@ -49,20 +49,15 @@ submitBtn.addEventListener('click', () => {
     } else mouseSketch(num);
 });
 
-ctrlBody.appendChild(inpLabel);
-ctrlBody.appendChild(ctrlInp);
-ctrlBody.appendChild(submitBtn);
-controller.appendChild(heading);
-controller.appendChild(ctrlBody);
-
 let mouseSketch = (num = 16) => {
     let totalNum = num * num + 1;
+    console.log(sketchArea.clientHeight);
+    let height = sketchArea.clientHeight / num;
 
     for (let i = 1; i < totalNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('gridItem');
-        // gridItem.textContent = `${i}`;
-        gridItem.style.height = `calc(100% / ${num})`;
+        gridItem.style.height = height + 'px';
 
         gridItem.addEventListener('mouseenter', () => {
             gridItem.classList.add('drawn');
@@ -72,8 +67,13 @@ let mouseSketch = (num = 16) => {
     }
 };
 
-mouseSketch();
+ctrlBody.appendChild(inpLabel);
+ctrlBody.appendChild(ctrlInp);
+ctrlBody.appendChild(submitBtn);
+controller.appendChild(heading);
+controller.appendChild(ctrlBody);
+
 sketchContainer.appendChild(sketchArea);
 container.appendChild(controller);
 container.appendChild(sketchContainer);
-
+mouseSketch();

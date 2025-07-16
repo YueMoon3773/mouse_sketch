@@ -11,7 +11,7 @@
 .container {
     height: 100vh;
     min-width: 100vw;
-    background-color: #800020;
+    background-color: #4e1020;
     display: flex;
     flex-direction: column;
 }
@@ -63,7 +63,7 @@
 }
 
 .sketchArea {
-    height: 94%;
+    height: 700px;
     aspect-ratio: 1 / 1;
     background-color: white;
 
